@@ -4,7 +4,7 @@ import requests
 import pyshorteners
 import bitly_api
 
-API_KEY = '5524818693:AAGKE23tp2qUwGJKpJzLue0F6JDNsa_icUE'
+API_KEY = '[BOT API KEY]'
 
 
 def start(update, context):
@@ -30,14 +30,14 @@ def queryHandler(update, context):
     update.callback_query.answer()
 
     if 'bitly' in query:
-        ACCESS_TOKEN = '69dd6739d96b407b8e78950b192bf09c19cbf202'
+        ACCESS_TOKEN = '[BITLY ACCESS TOKEN]'
         connection = bitly_api.Connection(access_token=ACCESS_TOKEN)
         shortlink = connection.shorten(getLink).get('url')
         longlink = connection.shorten(getLink).get('long_url')
 
         update.callback_query.message.edit_text(f'Long link :- {longlink}\n\nShorted link :- {shortlink}\n\nLink type :- bit.ly')
     elif 'cuttly' in query:
-        API_KEY = '1172cd196dc917f5bb4adcb9d3ab6e10'
+        API_KEY = '[CUTTLY API KEY]'
         BASE_URL = 'https://cutt.ly/api/api.php'
 
         payload = {
