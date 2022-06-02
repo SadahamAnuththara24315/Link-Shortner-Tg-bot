@@ -1,0 +1,4 @@
+python-telegram-bot==13.12
+requests==2.27.1
+pyshorteners==1.0.1
+bitly-api-py3==0.3
